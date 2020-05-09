@@ -1,18 +1,20 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <header>
+      <img src="./assets/images/logo.png" alt="Logo">
+      <nav id="links">
+        <router-link to="/">Nyheter</router-link>
+        <router-link to="/om">Om</router-link>
+        <router-link to="/kontakt">Kontakt</router-link>
+      </nav>
+    </header>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'App'
 }
 </script>
 
@@ -21,8 +23,41 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: wheat;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    background-color: pink;
+    padding-top: 1em;
+}
+header > img {
+    margin: 0 20px;
+    height: 128px;
+    width: 128px;
+}
+#links {
+    background-color: black;
+    margin-top: 1em;
+    display: flex;
+}
+#links > a {
+    text-decoration: none;
+    color: white;
+    font-family: bangers;
+    font-size: 1.5em;
+    flex-grow: 1;
+    text-align: center;
+}
+.content {
+  text-align: center;
+}
+@font-face {
+  font-family: 'bangers';
+  src: url('./assets/fonts/bangers.ttf');
 }
 </style>
