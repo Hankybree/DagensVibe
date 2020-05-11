@@ -21,7 +21,9 @@ const router = new VueRouter({
 })
 
 const store = new Vuex.Store({
-
+  state: {
+    articles: []
+  }
 })
 
 Vue.config.productionTip = false
@@ -31,3 +33,17 @@ new Vue({
   router,
   store
 }).$mount('#app')
+
+// Getting article data from server
+
+function fetchData() {
+  console.log('fetching data...')
+  fetch('http://localhost:3000/articles/')
+    .then(response => response.json())
+    .then(result => {
+      store.state.articles = result
+      console.log('Fetch done')
+    })
+}
+
+fetchData()

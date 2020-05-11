@@ -28,6 +28,7 @@ export default {
 body, html {
     margin: 0;
     padding: 0;
+    max-width: 100vw;
     background-color: wheat;
     font-family: Arial, Helvetica, sans-serif;
 }
