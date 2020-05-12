@@ -14,8 +14,22 @@
 
 <script>
 export default {
-  name: 'App'
-}
+  created() {
+    this.fetchData()
+  },
+  name: "App",
+  methods: {
+    fetchData() {
+      console.log("fetching data...");
+      fetch("http://localhost:3000/articles/")
+        .then(response => response.json())
+        .then(result => {
+          this.$store.state.articles = result;
+          console.log("Fetch done");
+        });
+    }
+  }
+};
 </script>
 
 <style>
@@ -26,39 +40,39 @@ export default {
   color: #2c3e50;
 }
 body, html {
-    margin: 0;
-    padding: 0;
-    max-width: 100vw;
-    background-color: wheat;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  background-color: wheat;
+  font-family: Arial, Helvetica, sans-serif;
 }
 header {
-    background-color: pink;
-    padding-top: 1em;
+  background-color: pink;
+  padding-top: 1em;
 }
 header > img {
-    margin: 0 20px;
-    height: 128px;
-    width: 128px;
+  margin: 0 20px;
+  height: 128px;
+  width: 128px;
 }
 #links {
-    background-color: black;
-    margin-top: 1em;
-    display: flex;
+  background-color: black;
+  margin-top: 1em;
+  display: flex;
 }
 #links > a {
-    text-decoration: none;
-    color: white;
-    font-family: bangers;
-    font-size: 1.5em;
-    flex-grow: 1;
-    text-align: center;
+  text-decoration: none;
+  color: white;
+  font-family: bangers;
+  font-size: 1.5em;
+  flex-grow: 1;
+  text-align: center;
 }
 .content {
   text-align: center;
 }
 @font-face {
-  font-family: 'bangers';
-  src: url('./assets/fonts/bangers.ttf');
+  font-family: "bangers";
+  src: url("./assets/fonts/bangers.ttf");
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <h1>Om</h1>
+    <h1>Om Dagens Vibe</h1>
     <p>
       Dagens Vibe startades med vision om en nytt och innovativt sätt att förmedla nyheter. Vi sätter människan i fokus. Vår värdegrund vilar på tre pelare; yttrandefrihet, rätten till att granska och humor.
     </p>

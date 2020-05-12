@@ -2,9 +2,9 @@
   <div class="content">
     <div class="articles" v-for="(article, index) in $store.state.articles" :key="index">
       <div v-if="article.type === 'article'">
-        <img :src="article.img" :alt="article.img">
-        <h2>{{ article.header }}</h2>
-        <div>
+        <img class="image" :src="article.img" :alt="article.img">
+        <div class="text-content">
+          <h2>{{ article.header }}</h2>
           <p class="ingress">{{ article.ingress }}</p>
           <p class="body">{{ article.body }}</p>
         </div>
@@ -19,8 +19,6 @@
         <div class="date">{{ article.date }}</div>
       </div>
     </div>
-    <!-- <youtube video-id="_J86LFuYXMc"></youtube>
-    <input type="button" @click="showData()" value="Logga data"> -->
   </div>
 </template>
 
@@ -56,6 +54,14 @@ export default {
   border-bottom: solid 1px #2c3e50;
   display: inline-block;
   width: 100%;
+  padding-top: 15px;
+}
+.image, .text-content {
+  width: 80vw;
+}
+.text-content {
+  display: inline-block;
+  text-align: left;
 }
 .ingress {
   font-weight: bold;
@@ -63,6 +69,7 @@ export default {
 .meta {
   display: flex;
   font-size: 12px;
+  margin-bottom: 6px;
 }
 .spacer {
   flex-grow: 1;
@@ -79,10 +86,16 @@ export default {
   .articles {
     width: 52vw;
   }
+  .image, .text-content {
+    width: 50vw;
+  }
 }
 @media (orientation: landscape) and (min-width: 700px) {
   .articles {
     width: 700px;
+  }
+  .image, .text-content {
+    width: 640px;
   }
 }
 </style>
