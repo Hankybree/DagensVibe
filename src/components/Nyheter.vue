@@ -4,7 +4,7 @@
       <div v-if="article.type === 'article'">
         <img class="image" :src="article.img" :alt="article.img">
         <div class="text-content">
-          <h2>{{ article.header }}</h2>
+          <router-link class="header-link" :to="article._id">{{ article.header }}</router-link>
           <p class="ingress">{{ article.ingress }}</p>
           <p class="body">{{ article.body }}</p>
         </div>
@@ -54,33 +54,15 @@ export default {
   border-bottom: solid 1px #2c3e50;
   display: inline-block;
   width: 100%;
-  padding-top: 15px;
 }
-.image, .text-content {
-  width: 80vw;
-}
-.text-content {
-  display: inline-block;
-  text-align: left;
-}
-.ingress {
+.header-link {
+  color: #2c3e50;
+  text-decoration: none;
+  font-size: 1.8em;
   font-weight: bold;
 }
-.meta {
-  display: flex;
-  font-size: 12px;
-  margin-bottom: 6px;
-}
-.spacer {
-  flex-grow: 1;
-}
-.author {
-  text-align: left;
-  margin-left: 1vw;
-}
-.date {
-  text-align: right;
-  margin-right: 1vw;
+.image {
+  margin-bottom: 15px;
 }
 @media (orientation: landscape) {
   .articles {

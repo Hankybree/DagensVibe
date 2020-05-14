@@ -71,6 +71,37 @@ header > img {
 .content {
   text-align: center;
 }
+
+/* Articles */
+.image {
+  margin-top: 15px;
+}
+.image, .text-content {
+  width: 80vw;
+}
+.text-content {
+  display: inline-block;
+  text-align: left;
+}
+.ingress {
+  font-weight: bold;
+}
+.meta {
+  display: flex;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+.spacer {
+  flex-grow: 1;
+}
+.author {
+  text-align: left;
+  margin-left: 1vw;
+}
+.date {
+  text-align: right;
+  margin-right: 1vw;
+}
 @font-face {
   font-family: "bangers";
   src: url("./assets/fonts/bangers.ttf");

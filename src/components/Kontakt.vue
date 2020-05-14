@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <div id="email">dagensvibe@gmail.com</div>
+    <h1>{{ $route.params.artikel }}</h1>
   </div>
 </template>
 
