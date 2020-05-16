@@ -25,7 +25,13 @@ const router = new VueRouter({
 const store = new Vuex.Store({
   state: {
     articles: [],
-    article: null
+    article: null,
+    question: null
+  },
+  mutations: {
+    setQuestion(state, someQuestion) {
+      state.question = someQuestion
+    }
   }
 })
 

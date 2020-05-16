@@ -21,7 +21,7 @@ export default {
   methods: {
     fetchData() {
       console.log("fetching data...");
-      fetch("http://localhost:3000/articles/")
+      fetch("http://116.203.125.0:3000/articles/")
         .then(response => response.json())
         .then(result => {
           this.$store.state.articles = result;
